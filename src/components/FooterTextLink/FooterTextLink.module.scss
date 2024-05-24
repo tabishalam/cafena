@@ -1,0 +1,7 @@
+@import "../../styles/_main";
+
+.text__link {
+    text-decoration: none;
+    color: $color__text--dim;
+    @extend .poppins__medium--16;
+}

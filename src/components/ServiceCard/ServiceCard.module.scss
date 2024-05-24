@@ -1,0 +1,35 @@
+@import "../../styles/_main";
+
+.service__card {
+    @include flex__row;
+    background: $color--black;
+
+    &--info {
+        @include flex__column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+
+        padding: 2rem; 
+    }
+
+    &--icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+
+        border-radius: 50%;
+        background-color: rgba($color--primary, .3);
+    }
+
+    &--title {
+        @extend .poppins__semibold--20;
+    }
+
+    &--description {
+        @extend .poppins__regular--16;
+        text-align: center;
+        inline-size: 23rem;
+    }
+}

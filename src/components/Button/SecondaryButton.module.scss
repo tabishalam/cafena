@@ -1,0 +1,15 @@
+@import "../../styles/_main";
+
+.secondary__button {
+    border: 1px solid $color--primary;
+    outline: none;
+    padding: 1rem 1.6rem;
+    border-radius: 0.6rem;
+    -webkit-border-radius: 0.6rem;
+    -moz-border-radius: 0.6rem; 
+    text-decoration: none;
+    color: $color--secondary;
+    background: transparent;
+
+    @extend .poppins__medium--14;
+}

@@ -1,0 +1,44 @@
+@import "../../styles/_main";
+
+.contact__card {
+    @include flex__column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    border-radius: .6rem;
+    text-align: center;
+    padding: 5rem 3rem;
+    transition: all .3s ease;
+
+    &:hover {
+        background: $color__background--grey;
+    }
+
+    &:hover &--icon {
+        background-color: rgba($color--primary, .3)
+    }
+
+    &--icon {
+        @include flex;
+        justify-content: center;
+        align-items: center;
+
+        // padding: 2rem;
+        height: 8.9rem;
+        width: 8.9rem;
+        margin-bottom: 1rem;
+        border-radius: 50%;
+        transition: all .3s ease;
+    }
+
+    &--title {
+        @extend .poppins__semibold--20;
+    }
+
+    &--info {
+        inline-size: 20.9rem;
+        color: $color__text--dim;
+        @extend .poppins__regular--16;
+    }
+}

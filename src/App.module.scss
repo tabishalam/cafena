@@ -1,0 +1,529 @@
+@import "./styles/_main";
+
+.header {
+    height: 100vh;
+    background-size: contain;
+    background: url("/assets/header__background.jpg");
+
+    &__content {
+        @include flex__row;
+        width: 100%;
+        height: calc(100% - 10rem);
+        padding-left: 20rem;
+        padding-right: 10rem;
+    }
+
+    &__text {
+        @include flex__column;
+        justify-content: center;
+        gap: 2rem;
+
+        height: calc(100% - 10rem);
+        color: $color--secondary;
+
+        &--main {
+            @extend .bebas__regular--130;
+            text-transform: uppercase;
+            line-height: 13rem;
+        }
+
+        &--sub {
+            @extend .poppins__regular--20;
+            color: $color__text--dim;
+        }
+
+        &--action {
+            @include flex__row;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+    }
+
+    &__courasel {
+        @include flex__column;
+        align-items: flex-end;
+        justify-content: center;
+        flex: 1;
+        gap: 2rem;
+
+        &--navigation {
+            width: 0.33rem;
+            height: 3.64rem;
+            border: 1px solid $color--secondary;
+            border-radius: 3rem;
+            background-color: transparent;
+
+            &.active {
+                background-color: $color--secondary;
+            }
+        }
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.65);
+    }
+
+    .bottom__color {
+        position: absolute;
+        bottom: 0;
+        height: 25.8rem;
+        width: 100%;
+        background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #101011 100%);
+        background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #101011 100%);
+        background: -ms-linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #101011 100%);
+        background: -o-linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #101011 100%);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #101011 100%);
+    }
+}
+
+.about {
+    @include flex__row;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+
+    padding: 10rem 0 5rem 0;
+
+    &__title {
+        @extend .bebas__regular--32;
+    }
+
+    &__description {
+        @include flex__column;
+        gap: 2rem;
+        @extend .poppins__regular--16;
+        line-height: 2.8rem;
+
+        & button {
+            @extend .bebas__regular--20;
+            color: $color--secondary;
+            line-height: 2rem;
+            width: fit-content;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid $color--secondary;
+            outline: none;
+        }
+    }
+}
+
+.menu {
+    position: relative;
+
+    &__header {
+        position: absolute;
+        top: -22.2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        
+        @include flex__row;
+        justify-content: center;
+        align-items: center;
+        gap: 4rem;
+
+        padding-top: 10rem;
+
+        &--title {
+            @extend .bebas__regular--200;
+            white-space: nowrap;
+        }
+
+        &--image1, 
+        &--image2 {
+            height: 11.5rem;
+            width: 17.2rem;
+        }
+
+        &--cup {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            -webkit-filter: drop-shadow(3rem 2rem 2rem #000000);
+            -moz-filter: drop-shadow(3rem 2rem 2rem #000000);
+            filter: drop-shadow(3rem 2rem 2rem #000000);
+        }
+    }
+
+    &__list {
+        margin-top: 28rem;
+        padding: 30rem 20rem 10rem 20rem;
+        background: $color__background--grey;
+
+        &--items {
+            @include flex__row;
+            gap: 5rem;
+            margin-top: 5rem;
+
+            &--section {
+                @include flex__column;
+                gap: 4rem;
+                flex: 1;
+            }
+        }
+    }
+}
+
+.exclusive {
+    @include flex__column;
+    align-items: center;
+    gap: 4rem;
+
+    padding: 10rem 0;
+
+    &__items {
+        @include flex__row;
+        gap: 1rem;
+    }
+}
+
+.message {
+    @include flex__row;
+
+    &__section--1 {
+        flex: 1;
+
+        @include flex__row;
+        gap: 4.5rem;
+
+        background-color: $color__background--grey;
+        padding-top: 10rem;
+    }
+
+    &__image {
+        max-height: 70rem;
+        margin-left: -10rem;
+    }
+
+    &__container {
+        position: relative;
+
+        @include flex__column;
+        justify-content: center;
+
+        & blockquote {
+            @include flex__column;
+        }
+
+        blockquote::before {
+            content: url("/assets/quote--open.png");
+            margin-left: -5rem;
+            color: white;
+        }
+
+        blockquote::after {
+            content: url("/assets/quote--close.png");
+            @include flex;
+            margin-right: -4.8rem;
+            justify-content: flex-end;
+            color: white;
+        }
+    }
+
+    &__title {
+        inline-size: 25.7rem;
+        @extend .bebas__regular--50;
+    }
+
+    &__sub-title {
+        inline-size: 27.2rem;
+        @extend .poppins__regular--16;
+    }
+
+    &__message {
+        inline-size: 26.8rem;
+        color: $color__text--dim;
+        @extend .poppins__regular--16;
+    }
+
+    &__section--2 {
+        flex: 1;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: normal;
+        align-items: normal;
+        align-content: normal;
+    }
+
+    &__card {
+        flex: 1;
+        width: 50%;
+        height: 50%;
+        flex-basis: auto;
+
+        overflow: hidden;
+
+        &--text {
+            @include flex;
+            justify-content: center;
+            align-items: center;
+
+            & p {
+                @extend .bebas__regular--60;
+                inline-size: 18rem;
+                text-align: center;
+            }
+        }
+
+        &--image {
+            img {
+                width: 100%;
+                height: 100%;
+                object-position: center;
+                object-fit: cover;
+            }
+        }
+
+        &--1 {
+            color: $color--black;
+            background-color: white;
+        }
+
+        &--4 {
+            background-color: $color--black;
+        }
+    }
+}
+
+.testimonial {
+    @include flex__column;
+    gap: 5rem;
+    padding: 10rem 20rem 18rem 20rem;
+
+    &__cards {
+        @include flex__row;
+        justify-content: baseline;
+        align-items: end;
+    }
+
+    & .card {
+        @include flex__column;
+        justify-content: center;
+        align-items: center;
+
+        position: relative;
+        height: fit-content;
+        border-radius: .6rem;
+        padding: 2rem 2rem 6rem 2rem;
+        background-color: $color__background--grey;
+
+        & blockquote {
+            @include flex__column;
+            gap: 1rem;
+
+            @extend .poppins__regular--14;
+            text-align: center;
+            inline-size: 32rem;
+            color: $color__text--dim;
+
+            &::before {
+                content: url("/assets/quote--open.png");
+            }
+        }
+
+        &__profile {
+            position: absolute;
+            bottom: -8rem;
+
+            @include flex__column;
+            justify-content: center;
+            align-items: center;
+
+            &--image {
+                margin-bottom: 1rem;
+            }
+
+            &--name {
+                color: $color__text--dim;
+                @extend .poppins__medium--14;
+            }
+
+            &--profession {
+                color: $color__text--dim;
+                @extend .poppins__regular--12;
+            }
+        }
+
+        &--highlighted {
+            margin: 0 -1rem 0 -1rem;
+            padding: 3rem 3rem 7rem 3rem;
+            background-color: $color--secondary;
+
+            z-index: 1;
+
+            & blockquote {
+                @include flex__column;
+                gap: 1rem;
+
+                @extend .poppins__regular--16;
+                text-align: center;
+                inline-size: 38rem;
+                color: $color__text--dim;
+
+                &::before {
+                    content: url("/assets/quote--open--black.png");
+                }
+            }
+
+            & .card__profile {
+                &--name,
+                &--profession {
+                    color: $color--secondary;
+                } ;
+
+                &--name {
+                    font-size: 1.6rem;
+                }
+
+                &--profession {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+}
+
+.services {
+    @include flex__column;
+    gap: 4rem;
+
+    padding: 6rem 0;
+    background: $color__background--grey;
+
+    &__cards {
+        display: flex;
+        gap: 2rem;
+
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+        overflow-x: scroll;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.contact {
+    @include flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 20rem;
+
+    &__cards {
+        @include flex;
+    }
+}
+
+.footer {
+    @include flex__column;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    padding: 5rem 0 4rem 0;
+    background: url("/assets/footer__background.png") no-repeat center center;
+    background-size: cover;
+
+    z-index: 1;
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(#000, .8);
+        z-index: 2;
+    }
+
+    &__info {
+        @include flex__row;
+        gap: 5rem;
+
+        z-index: 3;
+    }
+
+    &__section--1 {
+        @include flex__column;
+        gap: 2rem;
+
+        color: $color__text--dim;
+        @extend .poppins__regular--16;
+
+        & .footer__company {
+            &--info {
+                @include flex__row;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+            }
+    
+            &--moto {
+                inline-size: 22.6rem;
+            }
+    
+            &--description {
+                inline-size: 33.6rem;
+            }
+    
+            &--social {
+                @include flex__row;
+                align-items: center;
+                gap: 3rem;
+            }
+        }
+    }
+
+    &__newsletter--email {
+        border: none;
+        outline: none;
+        padding: 1rem 2rem;
+        border-radius: .6rem;
+        color: $color__black;
+        @extend .poppins__medium--16;
+
+        &:placeholder {
+            color: $color__text--dim;
+        }
+    }
+
+    &__copyright {
+        @extend .poppins__regular--16;
+        color: $color__text--dim;
+    }
+}
+
+/* Vendor Prefixes */
+.header__courasel--navigation,
+.header__courasel--navigation.active {
+    -webkit-border-radius: 3rem;
+    -moz-border-radius: 3rem;
+    border-radius: 3rem;
+}
+
+.header__courasel--navigation {
+    -webkit-background-color: transparent;
+    -moz-background-color: transparent;
+    background-color: transparent;
+}
+
+.header__courasel--navigation.active {
+    -webkit-background-color: $color--secondary;
+    -moz-background-color: $color--secondary;
+    background-color: $color--secondary;
+}
+
+/* Ensure cross-browser support for fit-content */
+button {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}

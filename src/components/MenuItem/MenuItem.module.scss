@@ -1,0 +1,52 @@
+@import "../../styles/_main";
+
+.menu__list--item {
+    @include flex__row;
+    gap: 2rem;
+
+    align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid $color__border--grey;
+
+    &--image {
+        height: 8rem;
+        width: 8rem;
+    }
+
+    &--info {
+        @include flex__row;
+        justify-content: space-between;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+
+        flex: 1;
+        -ms-flex: 1;
+        -webkit-box-flex: 1;
+
+        align-items: center;
+        -ms-flex-align: center;
+        -webkit-box-align: center;
+    }
+
+    &--textInfo {
+        @include flex__column;
+    }
+
+    &--title {
+        @extend .poppins__semibold--22;
+        color: $color__primary;
+    }
+
+    &--description {
+        @extend .poppins__regular--16;
+        color: $color__text--dim;
+    }
+
+    &--price {
+        text-align: right;
+        @extend .poppins__bold--20;
+    }
+}

@@ -1,0 +1,16 @@
+@import "../../styles/_main";
+
+.footer__section {
+    @include flex__column;
+    gap: 2rem;
+
+    &--title {
+        color: $color--secondary;
+        @extend .poppins__semibold--20;
+    }
+
+    &--items {
+        @include flex__column;
+        gap: 1rem;
+    }
+}
